@@ -10,8 +10,12 @@ import static com.fasterxml.jackson.annotation.JsonSubTypes.*;
  */
 @JsonTypeInfo(use= JsonTypeInfo.Id.NAME, include=JsonTypeInfo.As.WRAPPER_OBJECT)
 @JsonSubTypes({
-    @Type(Hello.class),
     @Type(Authenticated.class),
+    @Type(ConsoleCommand.class),
+    @Type(ConsoleResult.class),
+    @Type(Error.class),
+    @Type(Hello.class),
+        //Mapper.class is not a message class
     @Type(RunServer.class),
     @Type(ServerStarted.class),
 })
